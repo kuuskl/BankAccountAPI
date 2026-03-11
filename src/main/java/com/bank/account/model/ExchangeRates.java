@@ -2,6 +2,8 @@ package com.bank.account.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "exchange_rates")
 public class ExchangeRates {
@@ -10,15 +12,16 @@ public class ExchangeRates {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(targetEntity = Currency.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Currency.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "fromc", referencedColumnName = "id", insertable = true, updatable = true)
     private Currency fromc;
 
-    @ManyToOne(targetEntity = Currency.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Currency.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "toc", referencedColumnName = "id", insertable = true, updatable = true)
     private Currency toc;
 
-    private Double rate;
+    @Column(name = "rate", precision = 19, scale = 2, nullable = false)
+    private BigDecimal rate;
 
     public ExchangeRates() {}
 
@@ -38,7 +41,7 @@ public class ExchangeRates {
         this.toc = toc;
     }
 
-    public Double getRate() {
+    public BigDecimal getRate() {
         return rate;
     }
 

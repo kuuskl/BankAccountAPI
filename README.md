@@ -73,7 +73,7 @@ String from : Currency code of the money to convert from
 
 String to : Currency code of the money to convert to
 
-Double amount : The amount in 'from' currency to convert
+String amount : The amount in 'from' currency to convert
 
 Api call:
 

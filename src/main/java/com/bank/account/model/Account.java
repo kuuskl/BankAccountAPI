@@ -31,7 +31,7 @@ public class Account {
     public void setIban(String iban) { this.iban = iban; }
 
     public String getName() { return name; }
-    public void setName(String firstName) { this.name = name; }
+    public void setName(String name) { this.name = name; }
 
     public List<Balance> getBalances() { return balances; }
 

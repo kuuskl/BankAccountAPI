@@ -29,7 +29,7 @@ public class AccountController {
     }
 
     @PutMapping("exchange/{iban}/{from}/{to}/{amount}")
-    public String exchangeCurrency(@PathVariable String iban, @PathVariable String from, @PathVariable String to, @PathVariable Double amount) {
+    public String exchangeCurrency(@PathVariable String iban, @PathVariable String from, @PathVariable String to, @PathVariable String amount) {
         return accountControllerService.currencyExchange(iban, from, to, amount);
     }
 

@@ -23,17 +23,25 @@ public class Currency {
 
     public Currency() {}
 
-    public Currency(String currencyCode, Long conversionRate) {}
+    public Currency(String currencyCode, List<ExchangeRates> from, List<ExchangeRates> to) {
+        this.currencyCode = currencyCode;
+        this.from = from;
+        this.to = to;
+    }
 
     public Long getId() {
         return id;
     }
-    public void setId(Long id) {}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCurrencyCode() {
         return currencyCode;
     }
-    public void setCurrencyCode(String currencyCode) {}
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
 
     public List<ExchangeRates> getFrom() { return from; }
 
